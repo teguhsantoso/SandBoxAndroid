@@ -1,30 +1,28 @@
 package de.example.tsa.sandbox02.entities;
 
 import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
 import java.io.Serializable;
 
-import static android.arch.persistence.room.ForeignKey.CASCADE;
-
 /**
  * Created by Teguh Santoso on 20.11.2017.
  */
-@Entity(tableName = "products", indices=@Index(value="supplier_id"), foreignKeys = @ForeignKey(onDelete = CASCADE, entity = Supplier.class, parentColumns = "uid", childColumns = "supplier_id"))
+@Entity(tableName = "products")
 public class Product implements Serializable{
 
     private static final long serialVersionUID = 2552005252883370670L;
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "product_uid")
     private int uid;
 
     @ColumnInfo(name = "barcode_id")
     private String itemBarcodeId;
 
-    @ColumnInfo(name = "name")
+    @ColumnInfo(name = "product_name")
     private String name;
 
     @ColumnInfo(name = "image_url")
@@ -36,16 +34,16 @@ public class Product implements Serializable{
     @ColumnInfo(name = "description")
     private String description;
 
-    @ColumnInfo(name = "supplier_id")
-    private int supplierId;
+    @Embedded
+    Supplier supplier;
 
-    public Product(String itemBarcodeId, String name, String imageUrl, int sumOfOrders, String description, int supplierId) {
+    public Product(String itemBarcodeId, String name, String imageUrl, int sumOfOrders, String description, Supplier supplier) {
         this.itemBarcodeId = itemBarcodeId;
         this.name = name;
         this.imageUrl = imageUrl;
         this.sumOfOrders = sumOfOrders;
         this.description = description;
-        this.supplierId = supplierId;
+        this.supplier = supplier;
     }
 
     public int getUid() {
@@ -88,19 +86,19 @@ public class Product implements Serializable{
         this.itemBarcodeId = itemBarcodeId;
     }
 
-    public int getSupplierId() {
-        return supplierId;
-    }
-
-    public void setSupplierId(int supplierId) {
-        this.supplierId = supplierId;
-    }
-
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
     }
 }

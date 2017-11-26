@@ -19,7 +19,7 @@ public interface ProductDAO {
     @Query("SELECT * FROM products")
     List<Product> getAll();
 
-    @Query("SELECT * FROM products WHERE supplier_id = :supplier_id")
+    @Query("SELECT * FROM products WHERE supplier_uid = :supplier_id")
     List<Product> findProductsBySupplierId(int supplier_id);
 
     @Insert

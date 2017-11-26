@@ -37,7 +37,7 @@ public class ProductsItemAdapter extends RecyclerView.Adapter<ProductsItemAdapte
     @Override
     public void onBindViewHolder(final CustomViewHolder customViewHolder, final int i) {
         customViewHolder.textViewProductName.setText(data.get(i).getName());
-        customViewHolder.textViewSupplierName.setText("Supplier-Id: " + String.valueOf(data.get(i).getSupplierId()));
+        customViewHolder.textViewSupplierName.setText("Supplier-Name: " + data.get(i).getSupplier().getName());
         customViewHolder.textViewSumOrders.setText("Sum orders #" + String.valueOf(data.get(i).getSumOfOrders()));
     }
 

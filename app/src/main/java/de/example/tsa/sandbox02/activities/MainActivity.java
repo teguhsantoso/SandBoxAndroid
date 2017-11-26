@@ -276,18 +276,18 @@ public class MainActivity extends AppCompatActivity implements MainPresenterCall
         private void populateDatabase() {
             if(appDatabase.supplierDao().getAll().isEmpty()){
                 appDatabase.supplierDao().insertSupplier(new Supplier("Lenovo DE"));
-                appDatabase.supplierDao().insertSupplier(new Supplier("Toshiba Europe "));
+                appDatabase.supplierDao().insertSupplier(new Supplier("Toshiba Europe"));
                 appDatabase.supplierDao().insertSupplier(new Supplier("ACER Germany"));
                 appDatabase.supplierDao().insertSupplier(new Supplier("Verbatim DE"));
                 appDatabase.supplierDao().insertSupplier(new Supplier("BELKIN California"));
             }
             if(appDatabase.productDao().getAll().isEmpty()){
-                appDatabase.productDao().insertProduct(new Product("23009871120", "Netbook Thinkpad10", "N/A", 5, "N/A", 1));
-                appDatabase.productDao().insertProduct(new Product("23009871121", "Netbook Toshiba Sattelite Pro", "N/A", 1, "N/A", 2));
-                appDatabase.productDao().insertProduct(new Product("23009871122", "USB Verbatim 32GB", "N/A", 12, "N/A", 4));
-                appDatabase.productDao().insertProduct(new Product("23009871123", "WLAN Router BELKIN", "N/A", 10, "N/A", 5));
-                appDatabase.productDao().insertProduct(new Product("23009871124", "Notebook T440s", "N/A", 2, "N/A", 1));
-                appDatabase.productDao().insertProduct(new Product("23009871125", "Notebook Thinkpad YOGA", "N/A", 6, "N/A", 1));
+                appDatabase.productDao().insertProduct(new Product("23009871120", "Netbook Thinkpad10", "N/A", 5, "N/A", new Supplier("Lenovo DE")));
+                appDatabase.productDao().insertProduct(new Product("23009871121", "Netbook Toshiba Sattelite Pro", "N/A", 1, "N/A", new Supplier("Toshiba Europe")));
+                appDatabase.productDao().insertProduct(new Product("23009871122", "USB Verbatim 32GB", "N/A", 12, "N/A", new Supplier("Verbatim DE")));
+                appDatabase.productDao().insertProduct(new Product("23009871123", "WLAN Router BELKIN", "N/A", 10, "N/A", new Supplier("BELKIN California")));
+                appDatabase.productDao().insertProduct(new Product("23009871124", "Notebook T440s", "N/A", 2, "N/A", new Supplier("Lenovo DE")));
+                appDatabase.productDao().insertProduct(new Product("23009871125", "Notebook Thinkpad YOGA", "N/A", 6, "N/A", new Supplier("Lenovo DE")));
             }
         }
 

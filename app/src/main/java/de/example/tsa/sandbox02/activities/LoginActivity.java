@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenterCa
             return;
         }
         this.textViewLogin.setText("Product Id: " + this.selectedProduct.getUid() + " - " + this.selectedProduct.getName());
-        this.textViewSupplierName.setText("Supplier Id: " + this.selectedProduct.getSupplierId());
+        this.textViewSupplierName.setText("Supplier-Name: " + this.selectedProduct.getSupplier().getName());
         this.editTextSumOrder.setText(String.valueOf(this.selectedProduct.getSumOfOrders()));
         this.editTextDescription.setText(this.selectedProduct.getDescription());
     }

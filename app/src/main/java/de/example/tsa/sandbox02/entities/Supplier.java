@@ -15,10 +15,10 @@ public class Supplier implements Serializable {
     private static final long serialVersionUID = -3984977601419180775L;
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "uid")
+    @ColumnInfo(name = "supplier_uid")
     private int id;
 
-    @ColumnInfo(name = "name")
+    @ColumnInfo(name = "supplier_name")
     private String name;
 
     public Supplier(String name) {

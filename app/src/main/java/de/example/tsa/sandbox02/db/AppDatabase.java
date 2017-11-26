@@ -11,7 +11,7 @@ import de.example.tsa.sandbox02.entities.Supplier;
 /**
  * Created by Teguh Santoso on 20.11.2017.
  */
-@Database(entities = {Product.class, Supplier.class}, version = 6, exportSchema = false)
+@Database(entities = {Product.class, Supplier.class}, version = 8, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;
