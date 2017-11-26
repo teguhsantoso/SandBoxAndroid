@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.example.tsa.sandbox02.MainActivity">
+    tools:context="de.example.tsa.sandbox02.activities.MainActivity">
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"

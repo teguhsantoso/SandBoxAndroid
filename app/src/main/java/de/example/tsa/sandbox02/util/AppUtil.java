@@ -1,4 +1,4 @@
-package de.example.tsa.sandbox02;
+package de.example.tsa.sandbox02.util;
 
 import android.content.Context;
 
@@ -6,17 +6,17 @@ import android.content.Context;
  * Singleton class for storing class member and also utilities method.
  *
  */
-public class AppController {
+public class AppUtil {
     private Context cTxt;
 
     /**
      * Initialize the self singleton class object.
      */
-    private static AppController instance;
+    private static AppUtil instance;
 
-    public static AppController getInstance() {
+    public static AppUtil getInstance() {
         if (instance == null) {
-            instance = new AppController();
+            instance = new AppUtil();
         }
         return instance;
     }

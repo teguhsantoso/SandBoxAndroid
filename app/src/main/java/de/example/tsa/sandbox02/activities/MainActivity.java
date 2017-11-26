@@ -1,4 +1,4 @@
-package de.example.tsa.sandbox02;
+package de.example.tsa.sandbox02.activities;
 
 import android.Manifest;
 import android.app.FragmentTransaction;
@@ -13,7 +13,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -27,7 +26,7 @@ import com.google.android.gms.location.SettingsClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-import de.example.tsa.sandbox02.activities.LoginActivity;
+import de.example.tsa.sandbox02.R;
 import de.example.tsa.sandbox02.adapters.ProductsItemAdapter;
 import de.example.tsa.sandbox02.db.AppDatabase;
 import de.example.tsa.sandbox02.entities.Product;
@@ -36,7 +35,7 @@ import de.example.tsa.sandbox02.fragments.DashboardFragment;
 import de.example.tsa.sandbox02.fragments.HomeFragment;
 import de.example.tsa.sandbox02.fragments.NotificationFragment;
 
-public class MainActivity extends AppCompatActivity implements ProductsItemAdapter.OnAdapterInteractionListener, HomeFragment.OnFragmentInteractionListener, DashboardFragment.OnFragmentInteractionListener, NotificationFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements MainPresenterCallback, ProductsItemAdapter.OnAdapterInteractionListener, HomeFragment.OnFragmentInteractionListener, DashboardFragment.OnFragmentInteractionListener, NotificationFragment.OnFragmentInteractionListener {
     private static final String         LOGGER = "LOGGER";
     private static final String         INTENT_NAME_PRODUCT = "selectedProduct";
     private static final int            REQUEST_PERMISSIONS_REQUEST_CODE = 34;
@@ -261,6 +260,16 @@ public class MainActivity extends AppCompatActivity implements ProductsItemAdapt
         intent.putExtra(INTENT_NAME_PRODUCT, product);
         startActivity(intent);
         overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
     }
 
     private class AsyncInitDatabase extends AsyncTask<Void, Void, Void> {
