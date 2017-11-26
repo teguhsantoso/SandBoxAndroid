@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="de.example.tsa.sandbox02.fragments.HomeFragment">
+
+    <TextView
+        android:id="@+id/textViewTitleProducts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="List of products" />
+
+    <TextView
+        android:id="@+id/textViewSelectProducts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_below="@+id/textViewTitleProducts"
+        android:text="Find by supplier name:" />
+
+    <Spinner
+        android:id="@+id/spinnerSuppliers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewSelectProducts"
+        android:layout_marginTop="14dp"
+        android:layout_toStartOf="@+id/imageButtonSearch" />
+
+    <ImageButton
+        android:id="@+id/imageButtonSearch"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textViewSelectProducts"
+        android:src="?android:attr/actionModeWebSearchDrawable" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/products"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/spinnerSuppliers" />
+
+</RelativeLayout>

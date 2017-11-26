@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    tools:context="de.example.tsa.sandbox02.activities.LoginActivity">
+
+    <TextView
+        android:id="@+id/textViewLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textViewTitle"
+        android:layout_marginTop="20dp"
+        android:text="Product-ID"
+        android:textSize="16sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textViewPleaseWait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/progressBar"
+        android:visibility="invisible"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/progressBar"
+        android:text="Please wait..." />
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/buttonConfirm"
+        android:onClick="cancelAction"
+        android:text="Cancel" />
+
+    <Button
+        android:id="@+id/buttonConfirm"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonCancel"
+        android:layout_alignBottom="@+id/buttonCancel"
+        android:layout_alignEnd="@+id/editTextDescription"
+        android:onClick="confirmAction"
+        android:text="OK" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="Please edit production data" />
+
+    <TextView
+        android:id="@+id/textViewSupplierId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textViewLogin"
+        android:layout_marginTop="19dp"
+        android:textSize="15sp"
+        android:text="Suppier-Id" />
+
+    <TextView
+        android:id="@+id/textViewSumOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textViewSupplierId"
+        android:layout_marginTop="15dp"
+        android:text="Sum order:" />
+
+    <EditText
+        android:id="@+id/editTextSumOrder"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textViewSumOrder"
+        android:layout_marginStart="18dp"
+        android:layout_toEndOf="@+id/textViewSumOrder"
+        android:background="@drawable/rounded_edit_text"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:maxLength="4"
+        android:maxLines="1"
+        android:text="0"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editTextSumOrder"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:text="Description" />
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewDescription"
+        android:layout_alignBottom="@+id/textViewDescription"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/editTextSumOrder"
+        android:background="@drawable/rounded_edit_text"
+        android:gravity="left"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLength="4"
+        android:maxLines="1"
+        android:textSize="16sp" />
+
+</android.widget.RelativeLayout>
